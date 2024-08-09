@@ -12,10 +12,20 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
+  // Create a state hook to store the current guess.
+  const [guesses, setGuesses] = React.useState([]);
+
+  // Add handleSubmit function to handle the form submission.
+  function handleSubmitGuess(tentativeGuess) {
+    // TODO: Update the array to include the guess in the array
+    console.log("Received guess", tentativeGuess);
+    setGuesses([...guesses, tentativeGuess]);
+  }
+
   return (
   <>
-    <GuessResults />
-    <GuessInput />
+    <GuessResults guesses={guesses} />
+    <GuessInput handleSubmitGuess={handleSubmitGuess} />
   </>
   );
 }
