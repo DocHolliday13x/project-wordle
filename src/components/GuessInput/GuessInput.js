@@ -32,7 +32,7 @@ function GuessInput() {
         required
         minLength={5}
         maxLength={5}
-        pattern="[a-zA-Z]{5}"
+        pattern="[a-zA-Z]{5}" // Adding this validation corrects the failure caused by .toUpperCase() in the onChange event listener.
         title="5 Letter Word"
         // The value of the input is the current guess.
         value={guess}
