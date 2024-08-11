@@ -18,13 +18,10 @@
     "predev": "rimraf .parcel-cache dist",
     "dev": "parcel public/index.html",
     "build": "parcel build public/index.html",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "new-component": "new-component"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
     "gh-pages": "^6.1.1"
-  },
-  "homepage": "https://docholliday13x.github.io/project-wordle/"
+  }
 }
