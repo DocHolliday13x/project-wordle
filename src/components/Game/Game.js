@@ -44,7 +44,13 @@ function Game() {
         gameStatus={gameStatus}
         handleSubmitGuess={handleSubmitGuess}
       />
-      {gameStatus !== "running" && <GameOverBanner gameStatus={gameStatus} />}
+      {gameStatus !== "running" && (
+        <GameOverBanner
+          gameStatus={gameStatus}
+          numOfGuesses={guesses.length}
+          answer={answer}
+        />
+      )}
     </>
   );
 }
