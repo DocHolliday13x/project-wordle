@@ -17,7 +17,6 @@ function Game() {
 
   // Add handleSubmit function to handle the form submission.
   function handleSubmitGuess(tentativeGuess) {
-    // TODO: Update the array to include the guess in the array
     console.log("Received guess", tentativeGuess);
     setGuesses([...guesses, tentativeGuess]);
   }
