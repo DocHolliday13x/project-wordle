@@ -1,6 +1,6 @@
 import React from "react";
 import { range } from "../../utils";
-import { checkGuess } from "../../game-helpers"; // Josh provided this function in the game-helpers.js file to help us out.
+// import { checkGuess } from "../../game-helpers"; // Josh provided this function in the game-helpers.js file to help us out.
 
 // Creating a function for the cells to have a dynamic class name.
 function Cell({ letter, status }) {
@@ -15,20 +15,24 @@ function Cell({ letter, status }) {
   );
 }
 
-function Guess({ value, answer }) {
-  // Added new prop "answer"
-  // We'll use the checkGuess function to determine if the guess is correct.
-  const result = checkGuess(value, answer);
+// function Guess({ value, answer }) {
+//   // Added new prop "answer"
+//   // We'll use the checkGuess function to determine if the guess is correct.
+//   const result = checkGuess(value, answer);
 
   // console.log({ value, answer, result }); // Log the value, answer, and result to the console so we can see what's happening.
+
+function Guess({ value }) {
 
   return (
     <p className="guess">
       {range(5).map((num) => (
         <Cell
           key={num}
-          letter={result ? result[num].letter : ""} // Pass the letter prop to the Cell component. Adding the check for result to prevent errors.
-          status={result ? result[num].status : ""} // Pass the status prop to the Cell component.
+          // letter={result ? result[num].letter : ""} // Pass the letter prop to the Cell component. Adding the check for result to prevent errors.
+          // status={result ? result[num].status : ""} // Pass the status prop to the Cell component.
+          letter={value ? value[num].letter : ""}
+          status={value ? value[num].status : ""}
         /> // Pass the value and num props to the Cell component.
       ))}
     </p>
