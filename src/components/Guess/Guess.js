@@ -1,44 +1,19 @@
 import React from "react";
 
-function Guess({ guess }) {
+function Guess({ value }) {
   return (
-    <div className="guess-results">
-      <p className="guess">
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-      </p>
-      <p className="guess">
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-      </p>
-      <p className="guess">
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-      </p>
-      <p className="guess">
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-      </p>
-      <p className="guess">
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-        <span className="cell"></span>
-      </p>
-    </div>
+    <p className="guess">
+      {value.split("").map((letter, index) => (
+        <span key={index} className="cell">
+          {letter}
+        </span>
+      ))}
+      {/* <span className="cell"></span>
+      <span className="cell"></span>
+      <span className="cell"></span>
+      <span className="cell"></span>
+      <span className="cell"></span> */}
+    </p>
   );
 }
 
