@@ -67,27 +67,5 @@ function Game() {
   );
 }
 
-//   return (
-//     <>
-//       {gameStatus} {/* Temporarily logging the game status. */}
-//       <GuessResults guesses={guesses} answer={answer} />{" "}
-//       {/* GuessResults is rendered here, so we need to pass the guesses state to it. */}
-//       <GuessInput
-//         gameStatus={gameStatus}
-//         handleSubmitGuess={handleSubmitGuess}
-//       />
-//       {gameStatus === "won" && (
-//         <WonBanner
-//           numOfGuesses={guesses.length}
-//         />
-//       )}
-//       {gameStatus === "lost" && (
-//         <LostBanner
-//           answer={answer}
-//         />
-//       )}
-//     </>
-//   );
-// }
 
 export default Game;

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-function GuessInput({ gameStatus, handleSubmitGuess}) {
+function GuessInput({ gameStatus, handleSubmitGuess }) {
   // Create a state hook to store the current guess.
   // The initial value of the guess is an empty string.
-  const [tentativeGuess, setTentativeGuess] = React.useState('');
+  const [tentativeGuess, setTentativeGuess] = React.useState("");
 
   function handleSubmit(event) {
     // Prevent the form from refreshing the page.
@@ -15,18 +15,15 @@ function GuessInput({ gameStatus, handleSubmitGuess}) {
     }
 
     if (tentativeGuess.length !== 5) {
-      window.alert('Guess must be 5 characters long.');
+      window.alert("Guess must be 5 characters long.");
       return;
     }
-
-    // Log the current guess as an object to the console.
-    // console.log({ guess });
 
     // Instead of logging the guess value before deletion, pass the current guess value up to the handleSubmitGuess function.
     handleSubmitGuess(tentativeGuess);
 
     // Clear the input after submitting the form.
-    setTentativeGuess('');
+    setTentativeGuess("");
   }
 
   return (
@@ -34,7 +31,7 @@ function GuessInput({ gameStatus, handleSubmitGuess}) {
       <label htmlFor="guess-input">Enter guess:</label>
       <input
         required
-        disabled={gameStatus !== 'running'} // Disable the input if the game status is NOT running.
+        disabled={gameStatus !== "running"} // Disable the input if the game status is NOT running.
         minLength={5}
         maxLength={5}
         pattern="[a-zA-Z]{5}" // Adding this validation corrects the failure caused by .toUpperCase() in the onChange event listener.
@@ -47,8 +44,8 @@ function GuessInput({ gameStatus, handleSubmitGuess}) {
           const nextGuess = event.target.value.toUpperCase();
           setTentativeGuess(nextGuess);
         }}
-        id="guess-input" 
-        type="text" 
+        id="guess-input"
+        type="text"
       />
     </form>
   );

@@ -15,14 +15,9 @@ function Cell({ letter, status }) {
   );
 }
 
-// function Guess({ value, answer }) {
-//   // Added new prop "answer"
-//   // We'll use the checkGuess function to determine if the guess is correct.
-//   const result = checkGuess(value, answer);
-
-  // console.log({ value, answer, result }); // Log the value, answer, and result to the console so we can see what's happening.
 
 function Guess({ value }) {
+  // console.log({ value }); // Log the value to the console so we can see what's happening.
 
   return (
     <p className="guess">
