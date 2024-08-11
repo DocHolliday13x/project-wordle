@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GuessInput({ handleSubmitGuess}) {
+function GuessInput({ gameStatus, handleSubmitGuess}) {
   // Create a state hook to store the current guess.
   // The initial value of the guess is an empty string.
   const [tentativeGuess, setTentativeGuess] = React.useState('');
@@ -34,6 +34,7 @@ function GuessInput({ handleSubmitGuess}) {
       <label htmlFor="guess-input">Enter guess:</label>
       <input
         required
+        disabled={gameStatus !== 'running'} // Disable the input if the game status is NOT running.
         minLength={5}
         maxLength={5}
         pattern="[a-zA-Z]{5}" // Adding this validation corrects the failure caused by .toUpperCase() in the onChange event listener.

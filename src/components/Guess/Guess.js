@@ -20,7 +20,7 @@ function Guess({ value, answer }) {
   // We'll use the checkGuess function to determine if the guess is correct.
   const result = checkGuess(value, answer);
 
-  console.log({ value, answer, result }); // Log the value, answer, and result to the console so we can see what's happening.
+  // console.log({ value, answer, result }); // Log the value, answer, and result to the console so we can see what's happening.
 
   return (
     <p className="guess">
