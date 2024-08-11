@@ -23,7 +23,7 @@ function Game() {
 
   return (
   <>
-    <GuessResults guesses={guesses} />
+    <GuessResults guesses={guesses} answer={answer} /> {/* GuessResults is rendered here, so we need to pass the guesses state to it. */}
     <GuessInput handleSubmitGuess={handleSubmitGuess} />
   </>
   );
